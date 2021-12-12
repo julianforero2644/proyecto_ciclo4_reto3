@@ -49,6 +49,12 @@ public class UserController {
         return userService.update(user);
     }
 
+    @GetMapping("/{id}")
+    public Optional<User> getUser(@PathVariable("id") Integer id) {
+        return userService.getUser(id);
+    }
+
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id) {
